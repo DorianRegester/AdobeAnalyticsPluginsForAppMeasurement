@@ -1,7 +1,7 @@
 # AdobeAnalyticsPluginsForAppMeasurement
 Plugins for Adobe Analytics (appMeasurement.js version)
 
-# HardwareContextAuditor (v2.0.0)
+# HardwareContextAuditor (v1.0.0)
 
 **HardwareContextAuditor** is a privacy-first JavaScript utility designed for modern digital analytics implementations. It audits a user's hardware capabilities, network quality, and privacy signals (like Global Privacy Control) to provide technical context for performance monitoring and audience segmentation.
 
