@@ -9,22 +9,22 @@ window.HardwareContextAuditor = (function() {
 
     const getHardwareData = () => {
         return {
-            // 1. Technical Tiering
+            // Technical Tiering
             bot: nav.webdriver ? 'Y' : 'N',
             net: conn.effectiveType || 'unknown',
             cpu: nav.hardwareConcurrency || 'n/a',
             ram: nav.deviceMemory || 'n/a', // Restricted in some browsers
             touch: nav.maxTouchPoints || 0,
             
-            // 2. Capabilities
+            // Capabilities
             pdf: nav.pdfViewerEnabled ? 'Y' : 'N',
             save: conn.saveData ? 'Y' : 'N',
             motion: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'Red' : 'Std',
             
-            // 3. Modern Privacy (DNT is deprecated, GPC is the 2026 standard)
+            // Modern Privacy (DNT is deprecated, GPC is the 2026 standard)
             gpc: nav.globalPrivacyControl ? 'Y' : 'N',
             
-            // 4. Localization
+            // Localization
             lang: nav.languages ? nav.languages.slice(0, 2).join(',') : nav.language
         };
     };
