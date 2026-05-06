@@ -41,12 +41,45 @@ The script generates a piped string optimized for a single Adobe Analytics eVar.
 
 ---
 
-## Implementation
+## Implementation by Tag Manager
 
-### 1. Adobe Launch / WebSDK
-Add this script as a **Core - Custom Code** library load rule. The script will automatically run on window load. To capture the data in a Data Element:
+### 1. Adobe Launch (Legacy appMeasurement)
+* **Rule:** Create a rule triggered at **Library Loaded** or **Page Bottom**.
+* **Action:** Add a **Core - Custom Code** (Javascript) action and paste the `HardwareContextAuditor` script.
+* **Mapping:** To map to an eVar, use a second action (Adobe Analytics - Set Variables):
+    * **eVarX:** `%js_hardware_audit_string%` (assuming a Data Element is created to return `window.HardwareContextAuditor.run()`).
 
-**Data Element Name:** `js_hardware_audit_string`  
-**Type:** Custom Code
+### 2. Adobe Launch (WebSDK / Alloy.js)
+* **Setup:** Deploy the script via a **Library Loaded** rule.
+* **XDM Mapping:** In your WebSDK "Update Variable" action or Data Element, map your schema field to:
+    ```javascript
+    return window.HardwareContextAuditor.run();
+    ```
+* **Note:** This ensures the hardware context is sent in the initial `interact` call within the `_experience` or `custom_dimensions` XDM object.
+
+### 3. Tealium IQ
+* **Extension:** Add a **Javascript Code** extension.
+* **Scope:** Set to **Pre-Loader** if you want the data available for all tags, or **All Tags** for standard timing.
+* **Mapping:** Create a UDO variable `hardware_audit`. In the extension, add:
+    ```javascript
+    utag_data['hardware_audit'] = window.HardwareContextAuditor.run();
+    ```
+
+### 4. Ensighten (Manage)
+* **Tag:** Create a new **Custom Javascript** tag.
+* **Timing:** Set to **Immediate** or **Dom Ready**.
+* **Data Layer:** Use the `Bootstrapper` to push the result:
+    ```javascript
+    EnsTag_Data.set('hardware_context', window.HardwareContextAuditor.run());
+    ```
+
+### 5. Signal (formerly BrightTag)
+* **Tag:** Create a **Custom HTML/JS** tag.
+* **Injection:** Use the "Execute Custom Javascript" option.
+* **Binding:** Bind the output to a Signal variable for use in downstream pixels:
+    ```javascript
+    window.HardwareContextAuditor.run();
+    ```
+---
 ```javascript
 return window.HardwareContextAuditor.run();
