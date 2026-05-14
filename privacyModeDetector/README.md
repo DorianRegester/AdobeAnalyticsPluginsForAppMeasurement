@@ -1,4 +1,4 @@
-# privacyModeDetector (v1.0.0 - 2026 Edition)
+# privacyModeDetector (v1.0.0)
 
 **privacyModeDetector** is a high-sophistication utility designed for best-effort detection of Incognito and Private browsing modes across all major evergreen browsers. By identifying when a user is browsing in a restricted privacy state, analytics teams can better interpret missing persistent identifiers—such as the Experience Cloud ID (ECID)—and audit the impact of privacy-shielding behavior on session-stitching and conversion attribution.
 
