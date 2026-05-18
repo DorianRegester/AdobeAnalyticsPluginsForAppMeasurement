@@ -1,4 +1,4 @@
-# getBotDetection (SME-Grade)
+# getBotDetection plugin
 
 **getBotDetection** is a high-performance, hybrid behavioral and static detection utility designed for enterprise-grade digital analytics implementations. It goes beyond simple pattern matching by combining traditional User Agent/Referrer analysis with real-time behavioral monitoring to identify "Silent Bots"—crawlers that pass static checks but fail to interact with the UI.
 
@@ -54,7 +54,6 @@ The plugin returns a single string value. It is recommended to map this to an **
 
 **Data Layer Binding:**
 
-JavaScript
 var botStatus = (function(){ /* Plugin Code */ })();
 Bootstrapper.data.set('bot_type', botStatus);
 
