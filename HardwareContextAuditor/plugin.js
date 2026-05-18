@@ -1,6 +1,6 @@
 /**
  * @name HardwareContextAuditor
- * @version 1.0.0 (2026 Privacy-Safe Edition)
+ * @version 1.0.0
  * @description Audits hardware capability, network quality, and privacy signals.
  */
 window.HardwareContextAuditor = (function() {
