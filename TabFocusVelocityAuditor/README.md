@@ -2,8 +2,6 @@
 
 **tabFocusVelocityAuditor** is a specialized analytics utility designed to measure "Attention Economics" by tracking how users interact with browser tabs. In an era of multi-tab browsing, simply having a page open does not guarantee user attention. This script quantifies engagement by measuring tab-switching frequency (Velocity) and the percentage of time the page spent in the foreground (Attention Share).
 
----
-
 ## Key Features
 
 *   **Attention Share Calculation:** Calculates the precise percentage of a session where the tab was active and visible to the user.
@@ -11,8 +9,6 @@
 *   **Background Time Auditing:** Aggregates total time spent in the background, allowing for more accurate "True Time on Page" reporting.
 *   **Event-Driven Context:** Dispatches a `attention_context_event` custom event every time a user returns to the tab, enabling real-time data layer updates.
 *   **Exit-Intent Capture:** Utilizes the `pagehide` listener to ensure final session metrics are broadcasted before the user navigates away.
-
----
 
 ## Data Schema & Metrics
 
@@ -27,8 +23,6 @@ The auditor produces an object containing the following metrics, which can be ma
 
 **Console Output Example:**  
 `[AttentionAudit] Share: 72.4% | Velocity: 1.25 switches/min`
-
----
 
 ## Implementation by Tag Manager
 
