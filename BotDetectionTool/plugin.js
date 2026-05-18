@@ -1,6 +1,6 @@
 /**
  * @name getBotDetection
- * @description SME-grade behavioral and static bot detection.
+ * @description Behavioral and static bot detection.
  * @returns {string} The identified bot type or "Human"
  */
 return (function() {
