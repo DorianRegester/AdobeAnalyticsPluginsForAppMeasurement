@@ -1,6 +1,6 @@
 # getBotDetection plugin
 
-**getBotDetection** is a high-performance, hybrid behavioral and static detection utility designed for enterprise-grade digital analytics implementations. It goes beyond simple pattern matching by combining traditional User Agent/Referrer analysis with real-time behavioral monitoring to identify "Silent Bots"—crawlers that pass static checks but fail to interact with the UI.
+**getBotDetection** is a high-performance, hybrid behavioral and static detection utility designed for enterprise-grade digital analytics implementations. It goes beyond simple pattern matching by combining traditional User Agent/Referrer analysis with real-time behavioral monitoring to identify "Silent Bots"...crawlers that pass static checks but fail to interact with the UI.
 
 This plugin is optimized for analytics professionals managing high-volume traffic where data integrity is paramount for conversion and engagement reporting.
 
