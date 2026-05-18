@@ -2,8 +2,6 @@
 
 **tabFocusVelocityAuditor** is a specialized analytics utility designed to measure "Attention Economics" by tracking how users interact with browser tabs. In an era of multi-tab browsing, simply having a page open does not guarantee user attention. This script quantifies engagement by measuring tab-switching frequency (Velocity) and the percentage of time the page spent in the foreground (Attention Share).
 
-Developed by **Dorian D. Regester**, a Digital Analytics Professional and Implementation Engineer, this tool provides critical technical context for interpreting session duration and engagement metrics in enterprise environments.
-
 ---
 
 ## Key Features
@@ -61,4 +59,4 @@ The auditor produces an object containing the following metrics, which can be ma
 *   **Reliability:** Implements `pagehide` instead of `unload` for better compatibility with modern browser lifecycle states and mobile "back-forward" caching.
 
 ## 📄 License
-MIT License - Developed by **Dorian D. Regester** (scriptedinsights.com).
+MIT License - Developed by Dorian D. Regester
