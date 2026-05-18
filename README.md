@@ -53,9 +53,9 @@ Governance and security utilities dedicated to protecting data integrity and pre
 
 *   **getPIIScrubber**
 *   **getDataLayerWatchdog**
+*   **consentChangeAuditor**
+*   **getQueryParamCleaner**
 
 ## Questions/Comments/Concerns
 
 Please feel free to contact me as I would love to provide folks with things that will help them in their day jobs.
-*   **consentChangeAuditor**
-*   **getQueryParamCleaner**
