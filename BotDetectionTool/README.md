@@ -4,8 +4,6 @@
 
 This plugin is optimized for analytics professionals managing high-volume traffic where data integrity is paramount for conversion and engagement reporting.
 
----
-
 ## Key Features
 
 *   **Hybrid Detection:** Uses static regex patterns and real-time interaction listeners.
@@ -13,8 +11,6 @@ This plugin is optimized for analytics professionals managing high-volume traffi
 *   **Session-Based Persistence:** Results are cached in `sessionStorage` to minimize processing overhead across page views.
 *   **8-Second "Silent Bot" Timeout:** Automatically flags sessions as `Bot:No_Interaction` if no human activity is detected within the first 8 seconds.
 *   **Event-Driven Architecture:** Dispatches a `adobe_human_verified` custom event to allow for mid-session re-classification in your Tag Management System.
-
----
 
 ## Data Schema (eVar/Dimension Mapping)
 
@@ -27,8 +23,6 @@ The plugin returns a single string value. It is recommended to map this to an **
 | `Bot:No_Interaction` | Behavioral | No human interaction recorded within the 8-second window. |
 | `Evaluating` | Pending | The script is currently listening for human interaction. |
 | `Human` | Verified | A human interaction event was successfully detected. |
-
----
 
 ## Implementation by Tag Manager
 
@@ -61,8 +55,6 @@ Bootstrapper.data.set('bot_type', botStatus);
 *   **Tag Type:** **Custom HTML/JS** tag.
 *   **Trigger:** **Page Load**.
 *   **Integration:** Use the `adobe_human_verified` listener to conditionally fire or suppress downstream marketing pixels based on the verified human status.
-
----
 
 ## Technical Details
 
