@@ -14,7 +14,7 @@ This plugin is optimized for analytics professionals managing high-volume traffi
 
 ## Data Schema (eVar/Dimension Mapping)
 
-The plugin returns a single string value. It is recommended to map this to an **Adobe Analytics eVar** or **GA4 Custom Dimension**.
+The plugin returns a single string value. It is recommended to map this to an **eVar** not a prop.
 
 | Value | Category | Description |
 | :--- | :--- | :--- |
@@ -31,18 +31,13 @@ The plugin returns a single string value. It is recommended to map this to an **
 *   **Rule:** Trigger at **Library Loaded (Page Top)**.
 *   **Mapping:** Set your desired eVar to `%da_bot_status%`.
 
-### 2. Adobe Launch (WebSDK / Alloy.js)
-*   **Setup:** Use the script within a **Library Loaded** rule.
-*   **XDM Mapping:** Map your bot detection schema field to the Data Element returning this script.
-*   **Real-time Update:** Create a rule triggered by the `adobe_human_verified` custom event to send an `interact` call updating the status from `Evaluating` to `Human`.
-
-### 3. Tealium IQ
+### 2. Tealium IQ
 *   **Extension:** Add a **Javascript Code** extension scoped to **All Tags**.
 *   **Execution:**
     ```javascript
     utag_data['bot_detection_status'] = (function(){ /* Plugin Code */ })();
 
-### 4. Ensighten (Manage)
+### 3. Ensighten (Manage)
 *  **Tag Type:** Create a Custom Javascript tag.
 *  **Timing:** Set to Immediate or Page Top.
 
@@ -51,7 +46,7 @@ The plugin returns a single string value. It is recommended to map this to an **
 var botStatus = (function(){ /* Plugin Code */ })();
 Bootstrapper.data.set('bot_type', botStatus);
 
-### 5. Signal
+### 4. Signal
 *   **Tag Type:** **Custom HTML/JS** tag.
 *   **Trigger:** **Page Load**.
 *   **Integration:** Use the `adobe_human_verified` listener to conditionally fire or suppress downstream marketing pixels based on the verified human status.
