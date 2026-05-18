@@ -52,5 +52,5 @@ The auditor produces an object containing the following metrics, which can be ma
 *   **Performance:** Uses lightweight `Date` object calculations to ensure zero impact on the main thread and battery life.
 *   **Reliability:** Implements `pagehide` instead of `unload` for better compatibility with modern browser lifecycle states and mobile "back-forward" caching.
 
-## 📄 License
+## License
 MIT License - Developed by Dorian D. Regester
