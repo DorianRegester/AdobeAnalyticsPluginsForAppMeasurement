@@ -51,5 +51,5 @@ Sensitivity and reporting can be customized via the `config` object within the s
 *   **Capture Phase Detection:** The event listener is set to the **capture phase** (`true`) to ensure detections are recorded even if other elements on the page use `e.stopPropagation()`.
 *   **QA Ready:** Includes built-in console warnings to simplify debugging and implementation verification.
 
-## 📄 License
+## License
 MIT License - Developed by Dorian D. Regester
